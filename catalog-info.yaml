@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-dbmqvuzr-gitops
+  description: This is GitOps manifest for go-dbmqvuzr   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-dbmqvuzr
+    backstage.io/kubernetes-id: go-dbmqvuzr 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: go-dbmqvuzr-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-dbmqvuzr
